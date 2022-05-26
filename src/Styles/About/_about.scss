@@ -1,0 +1,110 @@
+.about-section {
+    width: 100%;
+    position: relative;
+    z-index: 400;
+    top: -4em;
+    overflow: hidden;
+    @include flex(column, center, center);
+}
+
+.about-bkg-frame {
+    height: 100%;
+    position: absolute;
+    z-index: 300;
+    overflow: hidden;  
+}
+
+.about-bkg-frame img {
+    position: relative;
+}
+
+.about-sidepanels {
+    position: relative;
+    z-index: 400;
+    width: 100%;
+    @include flex(column, center, center);
+}
+
+.about-text-panel {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.about-text-content {
+    width: 100%;
+    height: 100%;
+    padding-inline: 4em;
+
+    h2 {
+        font-size: var(--fs-600);
+        margin-block: 2em;
+        font-family: 'Ibarra Real Nova', serif;
+    }
+
+    p {
+        font-size: var(--fs-400);
+        font-weight: 100;
+        line-height: 1.5;
+        margin-bottom: 6em;
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+.about-image-panel {
+    width: 100%;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 40em) {
+    .about-image-panel {
+        @include flex(row, center, center);
+
+        img {
+            margin-inline: auto;
+        }
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .about-bkg-frame img {
+        width: 120em;
+        height: 100%;
+    }
+
+    
+    .about-sidepanels {
+        @include flex(row, center, center);
+        margin-block: 14em;
+        width: Min(93em, 90%);
+        margin-block: 4em;
+    }
+
+    .about-image-panel {
+        width: 50%;
+        height: 90%;
+        display: flex;
+        flex-direction: row;
+        align-self: flex-end;
+
+        img {
+            transform: scale(1.02);
+        }
+    }
+
+    .about-text-panel {
+        width: 50%;
+        margin-bottom: 7em;
+        display: flex;
+        flex-direction: row;
+        align-self: flex-start;
+        position: relative;
+        z-index: 500;
+        left: 3em;
+    }
+
+    .about-text-content {
+        padding-inline: 4em;
+        position: relative;
+    }
+}
