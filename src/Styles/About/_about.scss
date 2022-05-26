@@ -67,6 +67,10 @@
 }
 
 @media screen and (min-width: 60em) {
+    .about-section {
+        height: 120%;
+    }
+
     .about-bkg-frame img {
         width: 120em;
         height: 100%;

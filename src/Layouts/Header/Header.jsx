@@ -1,40 +1,15 @@
-import React, { useState } from 'react';
 import Logo from './../../Assets/Chido-logo.png';
 import HamMenuIcon from './../../Assets/ant-design_menu-outlined.svg';
+import useHamBtnTrigger from './useHamBtnTrigger';
+import useMenuBtnScrollTo from './useMenuBtnScrollTo';
 
 export default function Header() {
 
-  //Mobile Hamburger Menu state, 'false' as closed initially
+  const { isButtonTriggered, setIsButtonTriggered, enableMenu } = useHamBtnTrigger();
 
- let [isButtonTriggered, setIsButtonTriggered] = 
- useState(false);
+  const { footer, landingSection, aboutSection, menuSection,
+    scrollToSection } = useMenuBtnScrollTo();
 
-
-  /*Opening and closing the Mobile Ham Menu, by switching the state
-  on click*/
-
-  let enableMenu = () => {
-    setIsButtonTriggered(!isButtonTriggered);
-  };
-
-
-  //Selecting the DOM elements of the page
-
-  let footer = document.getElementById('footer');
-  let landingSection = document.getElementById('landing-section');
-  let aboutSection = document.getElementById('about-section');
-  let menuSection = document.getElementById('menu-section');
-
-  //Scroll to different sections of the page, on ham menu buttons click
-
-  let scrollToSection = (element) => {
-    let elementCoords = element.getBoundingClientRect();
-    window.scrollTo({
-      top: elementCoords.y - 110,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }
 
   return (
     <header>
@@ -59,16 +34,24 @@ export default function Header() {
       <ul className={`menu-list 
       menu-list-mobile ${isButtonTriggered ? 
       'menu-mobile-active' : ''}`}>
-        <li className='menu-home' onClick={() => scrollToSection(landingSection)}>
+        <li className='menu-home' onClick={() => {
+          scrollToSection(landingSection);
+          setIsButtonTriggered(false);}}>
           HOME
         </li>
-        <li className='menu-menu' onClick={() => scrollToSection(menuSection)}>
+        <li className='menu-menu' onClick={() => {
+          scrollToSection(menuSection);
+          setIsButtonTriggered(false);}}>
           MENU
         </li>
-        <li className='menu-about' onClick={() => scrollToSection(aboutSection)}>
+        <li className='menu-about' onClick={() => {
+          scrollToSection(aboutSection);
+          setIsButtonTriggered(false);}}>
           ABOUT
         </li>
-        <li className='menu-contact' onClick={() => scrollToSection(footer)}>
+        <li className='menu-contact' onClick={() => {
+          scrollToSection(footer);
+          setIsButtonTriggered(false);}}>
           CONTACT
         </li>
         <li className='menu-order'>ORDER</li>

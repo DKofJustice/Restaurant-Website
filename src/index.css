@@ -143,12 +143,28 @@ header img {
   height: 45px;
   font-size: var(--fs-400);
   cursor: pointer;
+  border-bottom: 0px solid rgba(0, 0, 0, 0);
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.menu-list li:hover {
+  color: #A7A934;
 }
 
 .menu-order {
   background-color: #A7A934;
   border-radius: 5px;
   margin-left: 1rem;
+}
+
+.menu-order:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #A7A934;
+}
+
+.menu-list-mobile .menu-order {
+  margin-left: 0;
 }
 
 @media screen and (min-width: 40em) {
@@ -196,6 +212,10 @@ header img {
             align-items: center;
     margin-left: auto;
     width: Min(60%, 600px);
+  }
+  .menu-list li:hover {
+    color: #A7A934;
+    border-bottom: 2px solid #A7A934;
   }
   .menu-list-mobile {
     display: none;
@@ -258,13 +278,16 @@ header img {
 }
 
 @media screen and (min-width: 40em) {
+  .landing-section {
+    height: 110%;
+  }
   .landing-bkg {
     width: 100%;
     height: 65em;
     position: absolute;
     z-index: 300;
     overflow: hidden;
-    top: -15em;
+    top: -4em;
   }
   .landing-bkg img {
     height: 100%;
@@ -382,6 +405,9 @@ header img {
 }
 
 @media screen and (min-width: 60em) {
+  .about-section {
+    height: 120%;
+  }
   .about-bkg-frame img {
     width: 120em;
     height: 100%;
@@ -861,6 +887,9 @@ header img {
 }
 
 @media screen and (min-width: 40em) {
+  .reviews-section {
+    height: 100%;
+  }
   .review-text-content {
     max-width: 45em;
     margin-inline: auto;
@@ -908,7 +937,7 @@ footer {
       -ms-flex-align: start;
           align-items: flex-start;
   padding-inline: 6rem;
-  margin-bottom: 10rem;
+  padding-bottom: 5rem;
   margin-inline: auto;
 }
 
@@ -962,6 +991,7 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   margin-right: 2rem;
+  cursor: pointer;
 }
 
 .contact-address, .contact-phone, .contact-email {
@@ -1036,6 +1066,17 @@ footer {
   .footer-links li {
     margin-bottom: 1rem;
   }
+}
+
+.CTA {
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.CTA:hover {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid #A7A934;
+  color: #A7A934;
 }
 
 * {

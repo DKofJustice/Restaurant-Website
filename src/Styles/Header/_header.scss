@@ -76,12 +76,27 @@ header img {
     height: 45px;
     font-size: var(--fs-400);
     cursor: pointer;
+    border-bottom: 0px solid rgba($color: #000000, $alpha: 0);
+    transition: all 0.1s linear;
+}
+
+.menu-list li:hover {
+    color: $secondaryclr;
 }
 
 .menu-order {
     background-color: $secondaryclr;
     border-radius: $borderRad;
     margin-left: 1rem;
+}
+
+.menu-order:hover {
+    background-color: rgba($color: #000000, $alpha: 0);
+    border: 2px solid $secondaryclr;
+}
+
+.menu-list-mobile .menu-order {
+    margin-left: 0;
 }
 
 @media screen and (min-width: 40em) {
@@ -110,6 +125,11 @@ header img {
         @include flex(row, center, center);
         margin-left: auto;
         width: Min(60%, 600px);
+    }
+
+    .menu-list li:hover {
+        color: $secondaryclr;
+        border-bottom: 2px solid $secondaryclr;
     }
 
     .menu-list-mobile {

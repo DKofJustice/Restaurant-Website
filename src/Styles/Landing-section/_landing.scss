@@ -54,13 +54,18 @@
 }
 
 @media screen and (min-width: 40em) {
+
+    .landing-section {
+        height: 110%;
+    }
+
     .landing-bkg {
         width: 100%;
         height: 65em;
         position: absolute;
         z-index: 300;
         overflow: hidden;
-        top: -15em;
+        top: -4em;
     }
     
     .landing-bkg img {
