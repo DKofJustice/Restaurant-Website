@@ -1,0 +1,118 @@
+header {
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba($color: #FFFFFF, $alpha: .4);
+    backdrop-filter: blur(7px);
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.menu-list, .menu-list li {
+    @include flex(row, center, center);
+}
+
+.container--header {
+    @include flex(row, flex-start, center);
+    width: 100%;
+    height: inherit;
+    padding-inline: 1rem;
+}
+
+.header-logo {
+    margin-left: 0;
+    cursor: pointer;
+}
+
+header img {
+    width: 4.5em;
+    height: 100%;
+}
+
+.ham-menu-icon {
+    cursor: pointer;
+    margin-left: auto;
+    position: relative;
+    z-index: 1500;
+    
+    img {
+        width: 2em;
+        height: 100%;
+    }
+}
+
+.menu-list {
+    @include flex(row, center, center);
+    margin-left: auto;
+    width: Min(60%, 600px);
+}
+
+.menu-list-desktop {
+    display: none;
+}
+
+.menu-list-mobile {
+    @include flex(column, center, center);
+    width: 100%;
+    position: relative;
+    backdrop-filter: blur(7px);
+    background-color: rgba($color: #171414, $alpha: .9);
+    padding-block: 2rem;
+    top: -25rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-mobile-active {
+    top: -6rem;
+}
+
+.menu-list li {
+    width: 120px;
+    height: 45px;
+    font-size: var(--fs-400);
+    cursor: pointer;
+}
+
+.menu-order {
+    background-color: $secondaryclr;
+    border-radius: $borderRad;
+    margin-left: 1rem;
+}
+
+@media screen and (min-width: 40em) {
+    header {
+        @include flex(row, center, center);
+    }
+
+    header img {
+        width: 5.8em;
+    }
+
+    .container--header {
+        width: Min(90%, 1100px);
+        padding: 0;
+    }
+
+    .ham-menu-icon {
+        display: none;
+    }
+
+    .menu-list-desktop {
+        display: initial;
+    }
+
+    .menu-list {
+        @include flex(row, center, center);
+        margin-left: auto;
+        width: Min(60%, 600px);
+    }
+
+    .menu-list-mobile {
+        display: none;
+    }
+}

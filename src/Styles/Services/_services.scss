@@ -1,0 +1,54 @@
+.services-section {
+    width: 100%;
+    background: #A7A934;
+    position: relative;
+    z-index: 400;
+    top: -5em;
+    padding-block: 4rem;
+}
+
+.services-content {
+    width: 100%;
+    margin-inline: auto;
+}
+
+.services-content, .service {
+    @include flex(column, center, center);
+    flex-wrap: wrap;
+}
+
+.service {
+
+    h2, p {
+        margin-bottom: 2rem;
+        color: black;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: var(--fs-500);
+        font-weight: 100;
+    }
+
+    p {
+        font-size: var(--fs-400);
+        width: 60%;
+    }
+}
+
+.service-img-cont {
+    padding: 0.8em;
+    border: 1px solid black;
+    margin-block: 2rem;
+}
+
+@media screen and (min-width: 40em) {
+    .services-content {
+        width: Min(70em, 80%);
+        @include flex(row, center, center);
+    }
+
+    .service {
+        max-width: 20em;
+    }
+}
